@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android" 
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent">
+    
+    <TextView
+    	android:id="@+id/editRepeatText"
+	    android:layout_width="wrap_content"
+	    android:layout_height="50dp"
+	    android:layout_marginRight="5dp"
+	    android:layout_alignParentTop="true"
+	    android:layout_alignParentLeft="true"
+	    android:text="@string/editRepeat" />
+	    	    
+	<EditText android:id="@+id/repeat" 
+		android:layout_width="wrap_content"
+		android:layout_height="50dp" 
+		android:layout_toRightOf="@id/editRepeatText"
+		android:layout_alignParentTop="true"
+		android:layout_alignParentRight="true"
+		android:maxLines="1"
+		android:maxLength="2"/>			
+    
+    <ToggleButton android:id="@+id/increment_button"
+    	android:layout_width="wrap_content"
+        android:layout_height="50dp"
+    	android:layout_below="@id/editRepeatText"
+    	android:layout_alignParentLeft="true"
+    	android:layout_centerHorizontal="true"
+        android:textOn="@string/countUp"
+        android:textOff="@string/countDown"/>
+
+	<Button android:id="@+id/ok"
+		android:layout_width="wrap_content"
+		android:layout_height="50dp"	
+		android:layout_toRightOf="@id/repeat"
+		android:layout_alignParentRight="true"	 
+	  	android:text="@string/ok" />				
+	    
+	<ImageView android:id="@+id/bobbins_link"
+	    android:layout_width="wrap_content"
+	    android:layout_height="wrap_content"
+	    android:layout_centerHorizontal="true"
+	    android:layout_alignParentBottom="true"
+	    android:src="@drawable/app_banner" />
+
+    <TextView android:id="@+id/bobbinsAdText"
+	    android:layout_width="wrap_content"
+	    android:layout_height="wrap_content"
+	    android:layout_centerHorizontal="true"
+	    android:layout_marginBottom="5dp"
+	    android:layout_above="@id/bobbins_link"
+	   	android:textStyle="italic"
+	    android:text="@string/bobbinsAdText" />
+	    
+	<TextView android:id="@+id/dashedLine"
+	    android:layout_height="wrap_content"
+	    android:layout_width="fill_parent" 
+	    android:layout_above="@id/bobbinsAdText"
+	    android:background="@drawable/dashed_line"
+	     />    
+</RelativeLayout>
