@@ -6,18 +6,26 @@
     <TextView
     	android:id="@+id/editRepeatText"
 	    android:layout_width="wrap_content"
-	    android:layout_height="50dp"
-	    android:layout_marginRight="5dp"
+	    android:layout_height="30dp"
+	    android:layout_marginTop="15dp"
 	    android:layout_alignParentTop="true"
 	    android:layout_alignParentLeft="true"
 	    android:text="@string/editRepeat" />
+
+    <TextView
+    	android:id="@+id/repeatHelpText"
+	    android:layout_width="wrap_content"
+	    android:layout_height="30dp"
+	    android:layout_marginLeft="15dp"
+	    android:layout_alignParentLeft="true"
+	    android:layout_below="@id/editRepeatText"
+	    android:text="@string/repeatHelp" />
 	    	    
 	<EditText android:id="@+id/repeat" 
-		android:layout_width="wrap_content"
+		android:layout_width="45dp"
 		android:layout_height="50dp" 
 		android:layout_toRightOf="@id/editRepeatText"
 		android:layout_alignParentTop="true"
-		android:layout_alignParentRight="true"
 		android:maxLines="1"
 		android:maxLength="2"/>			
     
@@ -25,7 +33,8 @@
     	android:layout_width="wrap_content"
         android:layout_height="50dp"
     	android:layout_below="@id/editRepeatText"
-    	android:layout_alignParentLeft="true"
+    	android:layout_marginTop="5dp"
+    	android:layout_alignParentRight="true"
     	android:layout_centerHorizontal="true"
         android:textOn="@string/countUp"
         android:textOff="@string/countDown"/>
@@ -35,6 +44,7 @@
 		android:layout_height="50dp"	
 		android:layout_toRightOf="@id/repeat"
 		android:layout_alignParentRight="true"	 
+	  	android:layout_alignParentTop="true"
 	  	android:text="@string/ok" />				
 	    
 	<ImageView android:id="@+id/bobbins_link"
