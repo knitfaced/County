@@ -3,6 +3,21 @@
     android:layout_width="fill_parent"
     android:layout_height="fill_parent">
     
+	<Button android:id="@+id/ok"
+		android:layout_width="45dp"
+		android:layout_height="50dp"	
+		android:layout_alignParentRight="true"	 
+	  	android:layout_alignParentTop="true"
+	  	android:text="@string/ok" />		
+	    	    
+	<EditText android:id="@+id/repeat" 
+		android:layout_width="45dp"
+		android:layout_height="50dp" 
+		android:layout_toLeftOf="@id/ok"
+		android:layout_alignParentTop="true"
+		android:maxLines="1"
+		android:maxLength="2"/>			    
+    
     <TextView
     	android:id="@+id/editRepeatText"
 	    android:layout_width="150dp"
@@ -11,6 +26,7 @@
 	    android:inputType="textMultiLine"
 	    android:layout_alignParentTop="true"
 	    android:layout_alignParentLeft="true"
+	    android:layout_toLeftOf="@id/repeat"
 	    android:text="@string/editRepeat" />
 
     <TextView
@@ -21,22 +37,6 @@
 	    android:layout_alignParentLeft="true"
 	    android:layout_below="@id/editRepeatText"
 	    android:text="@string/repeatHelp" />
-	    	    
-	<EditText android:id="@+id/repeat" 
-		android:layout_width="45dp"
-		android:layout_height="50dp" 
-		android:layout_toRightOf="@id/editRepeatText"
-		android:layout_alignParentTop="true"
-		android:maxLines="1"
-		android:maxLength="2"/>			    
-    
-	<Button android:id="@+id/ok"
-		android:layout_width="45dp"
-		android:layout_height="50dp"	
-		android:layout_toRightOf="@id/repeat"
-		android:layout_alignParentRight="true"	 
-	  	android:layout_alignParentTop="true"
-	  	android:text="@string/ok" />		
     
     <ToggleButton android:id="@+id/increment_button"
     	android:layout_width="wrap_content"
