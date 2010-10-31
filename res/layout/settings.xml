@@ -5,9 +5,10 @@
     
     <TextView
     	android:id="@+id/editRepeatText"
-	    android:layout_width="wrap_content"
-	    android:layout_height="30dp"
+	    android:layout_width="150dp"
+	    android:layout_height="35dp"
 	    android:layout_marginTop="15dp"
+	    android:inputType="textMultiLine"
 	    android:layout_alignParentTop="true"
 	    android:layout_alignParentLeft="true"
 	    android:text="@string/editRepeat" />
@@ -27,7 +28,15 @@
 		android:layout_toRightOf="@id/editRepeatText"
 		android:layout_alignParentTop="true"
 		android:maxLines="1"
-		android:maxLength="2"/>			
+		android:maxLength="2"/>			    
+    
+	<Button android:id="@+id/ok"
+		android:layout_width="45dp"
+		android:layout_height="50dp"	
+		android:layout_toRightOf="@id/repeat"
+		android:layout_alignParentRight="true"	 
+	  	android:layout_alignParentTop="true"
+	  	android:text="@string/ok" />		
     
     <ToggleButton android:id="@+id/increment_button"
     	android:layout_width="wrap_content"
@@ -37,15 +46,7 @@
     	android:layout_alignParentRight="true"
     	android:layout_centerHorizontal="true"
         android:textOn="@string/countUp"
-        android:textOff="@string/countDown"/>
-
-	<Button android:id="@+id/ok"
-		android:layout_width="wrap_content"
-		android:layout_height="50dp"	
-		android:layout_toRightOf="@id/repeat"
-		android:layout_alignParentRight="true"	 
-	  	android:layout_alignParentTop="true"
-	  	android:text="@string/ok" />				
+        android:textOff="@string/countDown"/>		
 	    
 	<ImageView android:id="@+id/bobbins_link"
 	    android:layout_width="wrap_content"
