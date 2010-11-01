@@ -1,28 +1,30 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android" 
-    android:orientation="vertical"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android" 
     android:layout_width="fill_parent"
     android:layout_height="fill_parent">
-	<TextView
-	  android:id="@+id/rowcount"
-	  android:layout_width="fill_parent"
-	  android:layout_height="fill_parent"
-	  android:layout_weight="1"
-	  android:gravity="center_horizontal"
-	  android:textColor="#ff0000"
-	  android:textSize="218dp"/>
-	<TextView
-	  android:id="@+id/rowsperrepeat"
-	  android:layout_width="fill_parent"
-	  android:layout_height="wrap_content"
-	  android:gravity="right"
-	  android:textColor="#ffffff"
-	  android:textSize="12dp"/>	  
 	<TextView
 	  android:id="@+id/completerepeats"
 	  android:layout_width="fill_parent"
 	  android:layout_height="wrap_content"
+	  android:layout_alignParentBottom="true"
 	  android:gravity="right"
 	  android:textColor="#ffffff"
-	  android:textSize="12dp"/>
-</LinearLayout>
+	  android:textSize="18dp"/>
+	<TextView
+	  android:id="@+id/rowsperrepeat"
+	  android:layout_width="fill_parent"
+	  android:layout_height="wrap_content"
+	  android:layout_above="@id/completerepeats"
+	  android:gravity="right"
+	  android:textColor="#ffffff"
+	  android:textSize="18dp"/>	  
+	<TextView
+	  android:id="@+id/rowcount"
+	  android:layout_width="fill_parent"
+	  android:layout_height="fill_parent"
+	  android:layout_above="@id/rowsperrepeat"
+	  android:gravity="center"
+	  android:textColor="#ff0000"
+	  android:textSize="218dp"/>
+
+</RelativeLayout>

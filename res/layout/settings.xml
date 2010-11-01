@@ -15,6 +15,7 @@
 		android:layout_height="50dp" 
 		android:layout_toLeftOf="@id/ok"
 		android:layout_alignParentTop="true"
+		android:inputType="number"
 		android:maxLines="1"
 		android:maxLength="2"/>			    
     
@@ -40,7 +41,7 @@
     
     <ToggleButton android:id="@+id/increment_button"
     	android:layout_width="wrap_content"
-        android:layout_height="50dp"
+        android:layout_height="55dp"
     	android:layout_below="@id/editRepeatText"
     	android:layout_marginTop="5dp"
     	android:layout_alignParentRight="true"
