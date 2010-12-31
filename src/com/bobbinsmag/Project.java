@@ -13,6 +13,8 @@ public class Project {
 	private boolean numeric = true;
 	private String notes = "";
 
+	private UserPreferences userPreferences;
+	
 	public Project() {		
 	}
 	
@@ -75,6 +77,15 @@ public class Project {
 	public void setNotes(String notes) {
 		this.notes = notes;
 	}
+	
+	public UserPreferences getUserPreferences() {
+		return userPreferences;
+	}
+
+	public void setUserPreferences(UserPreferences userPreferences) {
+		this.userPreferences = userPreferences;
+	}
+
 	public ContentValues toContentValues() {
         ContentValues contentValues = new ContentValues();
 		if (id != null) {
@@ -91,6 +102,7 @@ public class Project {
         }
 		return contentValues;
 	}
+	
     public void incrementRowCount() {
     	int currentRowCount = getRowCount();
     	int repeat = getRepeat();
@@ -100,7 +112,11 @@ public class Project {
 			currentRowCount = 0;
 		} 
 		if (repeat != 0) {
-    		if (currentRowCount > repeat) {
+			boolean incrementNow = currentRowCount > repeat;
+			if (!userPreferences.isShowCurrentRow()) {
+				incrementNow = currentRowCount >= repeat;
+			}
+    		if (incrementNow) {
     			setRowCount(currentRowCount - repeat);
     			int completeRepeats = getCompleteRepeats();
     			setCompleteRepeats(completeRepeats + 1);

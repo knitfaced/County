@@ -46,7 +46,7 @@ public abstract class RowCountDbActivity extends Activity {
 			mProject.setRepeat(repeat);
 			mProject.setRowCount(rowCount);
 			mProject.setCompleteRepeats(completeRepeats);
-
+			mProject.setUserPreferences(new UserPreferences(this));
 			cursor.close();
 		}
 	}

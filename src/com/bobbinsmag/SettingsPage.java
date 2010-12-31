@@ -18,14 +18,17 @@ public class SettingsPage extends RowCountDbActivity {
 	
 	private EditText mRepeatText;
 	private ToggleButton mIncrementButton;
+	private ToggleButton mCurrentRowButton;
 //	private ToggleButton mNumericButton;
-
+	private UserPreferences mUserPreferences;
+	
 	//static final int DIALOG_TOO_MANY_LETTERS_ID = 0;
 	static final int DIALOG_INVALID_NUMBER_ID = 1;
-	
+		
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
-        super.onCreate(savedInstanceState);
+        super.onCreate(savedInstanceState);        
+        
         setContentView(R.layout.settings);
         setTitle(R.string.settings);
 
@@ -33,8 +36,10 @@ public class SettingsPage extends RowCountDbActivity {
 	
         mRepeatText = (EditText) findViewById(R.id.repeat);
 		mIncrementButton = (ToggleButton) findViewById(R.id.increment_button);
+		mCurrentRowButton = (ToggleButton) findViewById(R.id.currentRowButton);
 		//mNumericButton = (ToggleButton) findViewById(R.id.numeric_button);
 		
+		mUserPreferences = new UserPreferences(this);
 		retrieveState();
         populateView();
         
@@ -46,6 +51,14 @@ public class SettingsPage extends RowCountDbActivity {
 				}
 			}
 		});
+
+        mCurrentRowButton.setOnClickListener(new View.OnClickListener() {			
+			@Override
+			public void onClick(View v) {
+				mUserPreferences.setShowCurrentRow(mCurrentRowButton.isChecked());
+			}
+		});
+        
         
         Button okButton = (Button) findViewById(R.id.ok);        
         okButton.setOnClickListener(new View.OnClickListener() {
@@ -75,7 +88,10 @@ public class SettingsPage extends RowCountDbActivity {
 	@Override
 	protected void populateView() {
 		mRepeatText.setText(mProject.getRepeat()+"");
-		mIncrementButton.setChecked(mProject.isIncrement());
+		mIncrementButton.setChecked(mProject.isIncrement());		
+		
+		// Restore preferences
+		mCurrentRowButton.setChecked(mUserPreferences.isShowCurrentRow());
 //		mNumericButton.setChecked(mProject.isNumeric());
 	}
 

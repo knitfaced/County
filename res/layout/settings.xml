@@ -38,16 +38,28 @@
 	    android:layout_alignParentLeft="true"
 	    android:layout_below="@id/editRepeatText"
 	    android:text="@string/repeatHelp" />
+
+    <ToggleButton android:id="@+id/currentRowButton"
+    	android:layout_width="wrap_content"
+        android:layout_height="60dp"
+    	android:layout_below="@id/repeatHelpText"
+    	android:layout_alignParentLeft="true"    	
+    	android:layout_marginTop="5dp"    	
+    	android:layout_centerHorizontal="true"
+        android:textOn="@string/showCurrentRow"
+        android:textOff="@string/showLastCompletedRow"/>
     
     <ToggleButton android:id="@+id/increment_button"
     	android:layout_width="wrap_content"
-        android:layout_height="55dp"
-    	android:layout_below="@id/editRepeatText"
+        android:layout_height="60dp"
+    	android:layout_below="@id/repeatHelpText"
+    	android:layout_toRightOf="@id/currentRowButton"
+    	android:layout_alignParentRight="true"  
     	android:layout_marginTop="5dp"
-    	android:layout_alignParentRight="true"
     	android:layout_centerHorizontal="true"
         android:textOn="@string/countUp"
         android:textOff="@string/countDown"/>		
+		
 	    
 	<ImageView android:id="@+id/bobbins_link"
 	    android:layout_width="wrap_content"

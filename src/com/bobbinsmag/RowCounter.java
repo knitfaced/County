@@ -76,7 +76,7 @@ public class RowCounter extends RowCountDbActivity {
     		
 	        if (mProject.isNumeric()) {
 	        	mRowCountText.setText(rowCount+"");
-	        } else {
+//	        } else {
 //	        	if (rowCount < 1 || rowCount > 26) {
 //	        		mRowCountText.setText("-");
 //	        	} else {
@@ -98,9 +98,7 @@ public class RowCounter extends RowCountDbActivity {
     			mRowsPerRepeatText.setText("");
     		}
     	}
-    }
-    
-
+    }    
     
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
