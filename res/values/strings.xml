@@ -10,8 +10,9 @@
     <string name="useNumbers">Use Numbers</string>
     <string name="countUp">Count Up</string>
     <string name="countDown">Count Down</string>
-    <string name="showCurrentRow">Show Current Row</string>
-    <string name="showLastCompletedRow">Show Last Completed Row</string>    
+    <string name="currentRowButtonLabelText">Row number represents:</string>
+    <string name="showCurrentRow">Current Row</string>
+    <string name="showLastCompletedRow">Last Completed Row</string>    
     <string name="ok">OK</string>
     <string name="rowsPerRepeat">Pattern repeat:</string>
     <string name="completedRepeats">Completed repeats:</string>

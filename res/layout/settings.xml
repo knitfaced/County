@@ -5,15 +5,17 @@
     
 	<Button android:id="@+id/ok"
 		android:layout_width="45dp"
-		android:layout_height="50dp"	
+		android:layout_height="45dp"	
+		android:layout_marginTop="1dp"
 		android:layout_alignParentRight="true"	 
 	  	android:layout_alignParentTop="true"
 	  	android:text="@string/ok" />		
 	    	    
 	<EditText android:id="@+id/repeat" 
 		android:layout_width="45dp"
-		android:layout_height="50dp" 
+		android:layout_height="45dp" 
 		android:layout_toLeftOf="@id/ok"
+		android:layout_marginTop="1dp"
 		android:layout_alignParentTop="true"
 		android:inputType="number"
 		android:maxLines="1"
@@ -38,28 +40,37 @@
 	    android:layout_alignParentLeft="true"
 	    android:layout_below="@id/editRepeatText"
 	    android:text="@string/repeatHelp" />
-
-    <ToggleButton android:id="@+id/currentRowButton"
-    	android:layout_width="wrap_content"
-        android:layout_height="60dp"
-    	android:layout_below="@id/repeatHelpText"
-    	android:layout_alignParentLeft="true"    	
-    	android:layout_marginTop="5dp"    	
-    	android:layout_centerHorizontal="true"
-        android:textOn="@string/showCurrentRow"
-        android:textOff="@string/showLastCompletedRow"/>
     
     <ToggleButton android:id="@+id/increment_button"
     	android:layout_width="wrap_content"
-        android:layout_height="60dp"
-    	android:layout_below="@id/repeatHelpText"
-    	android:layout_toRightOf="@id/currentRowButton"
-    	android:layout_alignParentRight="true"  
-    	android:layout_marginTop="5dp"
+        android:layout_height="45dp"
+    	android:layout_below="@id/editRepeatText"
+    	android:layout_marginTop="1dp"
+    	android:layout_alignParentRight="true"
     	android:layout_centerHorizontal="true"
         android:textOn="@string/countUp"
         android:textOff="@string/countDown"/>		
-		
+
+    <ToggleButton android:id="@+id/currentRowButton"
+    	android:layout_width="wrap_content"
+        android:layout_height="45dp"
+    	android:layout_below="@id/increment_button"
+    	android:layout_alignParentRight="true"    	
+    	android:layout_marginTop="1dp"    	
+    	android:layout_centerHorizontal="true"
+        android:textOn="@string/showCurrentRow"
+        android:textOff="@string/showLastCompletedRow"/>		
+
+    <TextView
+    	android:id="@+id/currentRowButtonLabel"
+	    android:layout_width="wrap_content"
+	    android:layout_height="45dp"
+	    android:gravity="center_vertical"
+	    android:layout_alignParentLeft="true"
+	    android:layout_marginRight="2dp"
+	    android:layout_toLeftOf="@id/currentRowButton"
+	    android:layout_below="@id/increment_button"	    
+	    android:text="@string/currentRowButtonLabelText" />
 	    
 	<ImageView android:id="@+id/bobbins_link"
 	    android:layout_width="wrap_content"
@@ -72,9 +83,9 @@
 	    android:layout_width="wrap_content"
 	    android:layout_height="wrap_content"
 	    android:layout_centerHorizontal="true"
-	    android:layout_marginBottom="5dp"
 	    android:layout_above="@id/bobbins_link"
 	   	android:textStyle="italic"
+	    android:textSize="12dp"
 	    android:text="@string/bobbinsAdText" />
 	    
 	<TextView android:id="@+id/dashedLine"

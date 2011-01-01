@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
       package="com.bobbinsmag"
-      android:versionCode="4"
-      android:versionName="1.3">
+      android:versionCode="5"
+      android:versionName="1.4">
       
 	<supports-screens
 		android:largeScreens="true"
@@ -12,7 +12,7 @@
     <uses-permission android:name="android.permission.WAKE_LOCK" />
     <uses-sdk android:minSdkVersion="3" android:targetSdkVersion="4" />
       
-    <application android:icon="@drawable/county_icon" android:label="@string/app_name">    
+    <application android:icon="@drawable/county_icon" android:label="@string/app_name" android:debuggable="true">    
         <activity android:name=".SelectProject"
                   android:label="@string/app_name">
             <intent-filter>
