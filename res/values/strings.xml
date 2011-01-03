@@ -16,5 +16,8 @@
     <string name="ok">OK</string>
     <string name="rowsPerRepeat">Pattern repeat:</string>
     <string name="completedRepeats">Completed repeats:</string>
+    <string name="totalRows">Total rows:</string>
     <string name="bobbinsAdText">Like this app? Like knitting? You might like:</string>
+    <string name="increment">Increase</string>
+    <string name="decrement">Decrease</string>
 </resources>

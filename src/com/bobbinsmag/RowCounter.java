@@ -19,9 +19,12 @@ public class RowCounter extends RowCountDbActivity {
 	private TextView mRowCountText;
 	private TextView mCompleteRepeatsText;
 	private TextView mRowsPerRepeatText;
+	private TextView mTotalRowsText;
 	
 	private static final int RESET_ID = Menu.FIRST;
 	private static final int SETTINGS_ID = Menu.FIRST + 1;
+	private static final int INCREMENT_ID = Menu.FIRST + 2;
+	private static final int DECREMENT_ID = Menu.FIRST + 3;
 	
 	private static final int ACTIVITY_SETTINGS = 0;
 	
@@ -40,6 +43,7 @@ public class RowCounter extends RowCountDbActivity {
         mCompleteRepeatsText = (TextView) findViewById(R.id.completerepeats);
         mRowCountText = (TextView) findViewById(R.id.rowcount);        
         mRowsPerRepeatText = (TextView) findViewById(R.id.rowsperrepeat);
+        mTotalRowsText = (TextView) findViewById(R.id.totalrows);
         
         retrieveState();
         populateView();
@@ -69,27 +73,18 @@ public class RowCounter extends RowCountDbActivity {
     		final int rowCount = mProject.getRowCount();
     		final int repeat = mProject.getRepeat();
     		final int completeRepeats = mProject.getCompleteRepeats();
-    		
+    		final int totalRows = (completeRepeats * repeat) + rowCount;
     		final int currentColourIndex = completeRepeats % 5;
     		int newColour = getResources().getColor(TEXT_COLOURS.get(currentColourIndex));
-    		mRowCountText.setTextColor(newColour);
-    		
-	        if (mProject.isNumeric()) {
-	        	mRowCountText.setText(rowCount+"");
-//	        } else {
-//	        	if (rowCount < 1 || rowCount > 26) {
-//	        		mRowCountText.setText("-");
-//	        	} else {
-//	        		//a is unicode 97
-//	        		char letter = (char) (rowCount + 96);	        	
-//		        	mRowCountText.setText(letter + "");
-//	        	}
-	        }
+    		mRowCountText.setTextColor(newColour);    		
+	        mRowCountText.setText(rowCount+"");
 	        
-	        if (completeRepeats > 0) {        	
+	        if (completeRepeats > 0) {        		        	
 	        	mCompleteRepeatsText.setText(getResources().getText(R.string.completedRepeats).toString() + " " + completeRepeats);
+	        	mTotalRowsText.setText(getResources().getText(R.string.totalRows).toString() + " " + totalRows);
 	        } else {
 	        	mCompleteRepeatsText.setText("");
+	        	mTotalRowsText.setText("");
 	        }
     		
     		if (repeat > 0) {
@@ -105,6 +100,8 @@ public class RowCounter extends RowCountDbActivity {
         super.onCreateOptionsMenu(menu);
         menu.add(0, RESET_ID, 0, R.string.reset);
         menu.add(0, SETTINGS_ID, 0, R.string.settings);
+        menu.add(0, DECREMENT_ID, 0, R.string.decrement);
+        menu.add(0, INCREMENT_ID, 0, R.string.increment);
         return true;
     }
 
@@ -121,6 +118,16 @@ public class RowCounter extends RowCountDbActivity {
                 i.putExtra(RowCountDbAdapter.ID, mProjectId);
                 startActivityForResult(i, ACTIVITY_SETTINGS);
             	return true;
+            case DECREMENT_ID:
+            	mProject.decrementRowCount();
+            	saveState();
+            	populateView();
+                return true;
+            case INCREMENT_ID:
+            	mProject.incrementRowCount();
+            	saveState();
+            	populateView();
+                return true;
         }
         return super.onMenuItemSelected(featureId, item);
     }    

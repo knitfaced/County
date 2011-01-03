@@ -34,6 +34,6 @@
 	  android:layout_above="@id/rowsperrepeat"
 	  android:gravity="center"
 	  android:textColor="#ff0000"
-	  android:textSize="218dp"/>
+	  android:textSize="216dp"/>
 
 </RelativeLayout>

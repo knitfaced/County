@@ -5,7 +5,7 @@ import android.content.ContentValues;
 public class Project {
 	
 	private Long id;
-	private String name = "<Touch to start counting>";
+	private String name = "<Touch here to start counting>";
 	private int rowCount = 0;
 	private int repeat = 0;
 	private int completeRepeats = 0;
